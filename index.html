@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font smoothing for that crisp designer look */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Custom link underline animation */
+        .hover-underline {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Selection color */
+        ::selection {
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-[#111111] text-[#EAEAEA] font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Main Container -->
+    <main class="w-full max-w-[640px] mx-auto px-6 pt-12 pb-20 md:pt-24 md:pb-32">
+        
+        <!-- Header / Logo -->
+        <header class="mb-16 md:mb-24 flex items-center gap-4">
+            <!-- Box Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#EAEAEA]">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+            
+            <!-- Personal Icon (Constructed from your repo path) -->
+            <img 
+                src="https://raw.githubusercontent.com/itzmedaniel/website/main/favicon_io/android-chrome-192x192.png" 
+                alt="Personal Icon" 
+                class="w-8 h-8 rounded-sm"
+                onerror="this.style.display='none'" 
+            />
+        </header>
+        
+        <!-- Content Section -->
+        <article class="space-y-8">
+            
+            <!-- Intro Heading -->
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                Hello, I'm Daniel.
+            </h2>
+
+            <!-- Bio Text -->
+            <div class="text-lg md:text-[1.15rem] leading-[1.6] text-[#999] space-y-6 font-normal">
+                <p>
+                    I started university in November 2024. Still learning, still experimenting.
+                </p>
+
+                <p>
+                    I actually built a portfolio before this. It's not the most optimized thing in the world (pretty heavy on resources), so you'll probably need a good device to get the full experience. If you're curious, you can <a href="https://itzmedaniel.github.io/website" class="text-[#EAEAEA] hover:text-white transition-colors duration-200 hover-underline">check it out here ↗</a>.
+                </p>
+                
+                <p>
+                    I'm planning to fill my GitHub with more projects as I improve. You can follow along <a href="https://github.com/itzmedaniel" class="text-[#EAEAEA] hover:text-white transition-colors duration-200 hover-underline">over here ↗</a>.
+                </p>
+            </div>
+
+        </article>
+
+        <!-- Footer / Navigation Links -->
+        <nav class="mt-24 pt-8 border-t border-[#222] md:border-none md:pt-0">
+            <ul class="flex flex-wrap gap-x-8 gap-y-4 items-center">
+                <li>
+                    <a href="https://www.linkedin.com/in/daniel-long-49ab9a33a" target="_blank" rel="noopener noreferrer" class="text-[#666] hover:text-[#EAEAEA] transition-colors duration-200 block" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <button onclick="copyEmail()" class="text-[#666] hover:text-[#EAEAEA] transition-colors duration-200 block focus:outline-none" aria-label="Copy Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/grapejuicelemonade" target="_blank" rel="noopener noreferrer" class="text-[#666] hover:text-[#EAEAEA] transition-colors duration-200 block" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/itzmedaniel" target="_blank" rel="noopener noreferrer" class="text-[#666] hover:text-[#EAEAEA] transition-colors duration-200 block" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-[#333] text-[#EAEAEA] px-4 py-2 rounded-md shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none font-medium text-sm whitespace-nowrap z-50 border border-[#444]">
+        Copied: daniellong1109@gmail.com
+    </div>
+
+    <script>
+        function copyEmail() {
+            const email = 'daniellong1109@gmail.com';
+            
+            // Create temporary input to copy text
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast();
+            } catch (err) {
+                console.error('Failed to copy', err);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0');
+            
+            // Hide after 2.5 seconds
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+    </script>
+
+</body>
+</html>
