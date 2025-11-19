@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel</title>
-    <!-- Favicon setup -->
+    
+    <!-- Favicon setup: Includes both standard icon and shortcut icon for compatibility -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/itzmedaniel/website/main/favicon_io/android-chrome-192x192.png">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/itzmedaniel/website/main/favicon_io/android-chrome-192x192.png">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/itzmedaniel/website/main/favicon_io/android-chrome-192x192.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -62,7 +64,7 @@
                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
             </svg>
             
-            <!-- Personal Icon (Constructed from your repo path) -->
+            <!-- Personal Icon -->
             <img 
                 src="https://raw.githubusercontent.com/itzmedaniel/website/main/favicon_io/android-chrome-192x192.png" 
                 alt="Personal Icon" 
@@ -169,6 +171,9 @@
                 toast.classList.add('opacity-0');
             }, 2500);
         }
+
+        // Script to reinforce title change (useful in some single-page app contexts)
+        document.title = "Daniel";
     </script>
 
 </body>
